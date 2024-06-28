@@ -1,0 +1,143 @@
+@media only screen and (max-width: 768px) {
+  .footerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  #saveDataBtn,
+  #editDetailsBtn {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .myUl > li > a.active {
+    border: none !important;
+  }
+
+  .myUl > li > a:focus {
+    border: none !important;
+  }
+
+  .myUl {
+    text-align: center;
+  }
+
+  .d-flex {
+    justify-content: center;
+  }
+
+  .cartHeader > ul.cartheaderDescription,
+  .carts > ul.cartsDescription {
+    gap: 200px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainSliderSliding > div {
+    padding-top: 0px !important;
+  }
+
+  .sliderRow {
+    flex-direction: column-reverse !important;
+  }
+
+  .signUpRow {
+    flex-direction: column-reverse !important;
+  }
+
+  .signInRow {
+    flex-direction: column-reverse !important;
+  }
+
+  .sliderUl {
+    text-align: center;
+  }
+
+  .sliderMain {
+    padding: 10px !important;
+  }
+
+  .cartHeader > ul.cartheaderDescription,
+  .carts > ul.cartsDescription {
+    gap: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .cartHeader > ul.cartheaderDescription,
+  .carts > ul.cartsDescription {
+    gap: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 353px) {
+  .cartHeader > ul.cartheaderDescription,
+  .carts > ul.cartsDescription {
+    gap: 10px !important;
+  }
+
+  .card {
+    padding: 5px !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .aboutImg {
+    width: 225px;
+    height: 225px;
+  }
+
+  .imgSec {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .aboutImg > img {
+    width: 100px;
+    top: 20px;
+    right: 60px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .storySec {
+    padding-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 313px) {
+  #userEmail {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #cartLength {
+    right: -1% !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .updownQtyBtns {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  #placeOrderBtn {
+    margin-bottom: 10px !important;
+  }
+
+  .cartBtns {
+    flex-direction: column !important;
+    gap: 5px !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <title>Profile View</title>
+    <!-- BootStrap Css and Js-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FontAwesome Cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+    />
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Toastr CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+    />
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex searchContainer position-relative mt-3 mb-3">
+            <input
+              type="text"
+              class="form-control text-dark me-2"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-icon"
+            />
+            <i class="fas fa-search position-absolute"></i>
+            <div class="icons">
+              <span class="input-group-text" id="fa-house"
+                ><a href="../index.html"
+                  ><i class="fa-solid fa-house" style="cursor: pointer"></i></a
+              ></span>
+              <span class="input-group-text" id="fa-cart-plus"
+                ><a href="./cart.html">
+                  <div id="cartLength" style="position: absolute">0</div>
+                  <i
+                    class="fa-solid fa-cart-shopping"
+                    style="cursor: pointer"
+                  ></i></a
+              ></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- User Profile -->
+    <div class="container">
+      <div class="maincard">
+        <h1 id="userName"></h1>
+        <h4>Welcome to Apna Store</h4>
+        <div class="progress mb-3" style="display: none" id="progressDiv">
+          <div class="progress-bar" id="progressBar" style="width: 10%"></div>
+        </div>
+        <div class="card p-4">
+          <div class="d-flex justify-content-center align-items-center">
+            <div id="loader1">
+              <div class="loader1"></div>
+            </div>
+          </div>
+          <div class="userimage" id="userProfile" style="display: none">
+            <img src="" id="userPhotoUpload" />
+            <input type="file" id="inputFile" style="display: none" />
+            <div class="userEmail">
+              <p id="userEmail"></p>
+            </div>
+            <div class="userVerified">
+              <p id="userVerified"></p>
+            </div>
+            <div id="container"></div>
+            <div class="profileBtns">
+              <button id="fileSelectBtn" style="display: none">
+                Upload Picture
+              </button>
+              <button id="cancelUploadBtn" style="display: none">
+                Cancel Upload
+              </button>
+              <button id="logOutBtn">Log Out</button>
+              <button id="emailVerificationBtn" style="display: none">
+                Verify Email
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Profile -->
+    <div class="container" id="profileDetails" style="display: none">
+      <div class="editProfile">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="mainEdit p-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <div id="loader2">
+                  <div class="loader3"></div>
+                </div>
+              </div>
+              <div class="editInput" id="editInput">
+                <div class="d-flex justify-content-center align-items-center">
+                  <img
+                    src="./images/view.gif"
+                    id="enterImg"
+                    alt="loading..."
+                  />
+                </div>
+                <h4 class="text-center">Enter Details</h4>
+                <div class="row mt-2">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type your Name"
+                      id="name"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type father's Name"
+                      id="surname"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="number"
+                      class="settings"
+                      placeholder="Enter Valid Phone Number"
+                      id="mobileNo"
+                    />
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="email"
+                      class="settings"
+                      placeholder="Enter Secondary Valid Email"
+                      id="emailProvided"
+                    />
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type your status Such as student or developer etc."
+                      id="userStatus"
+                    />
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type Valid Address"
+                      id="address"
+                    />
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type city name"
+                      id="cityName"
+                    />
+                  </div>
+                  <div class="col-md-12 mt-2">
+                    <input
+                      type="text"
+                      class="settings"
+                      placeholder="Type country name"
+                      id="countryName"
+                    />
+                  </div>
+                </div>
+                <div class="mt-3 text-center">
+                  <button
+                    class="profileBtn me-2"
+                    id="saveDataBtn"
+                    type="button"
+                  >
+                    Save
+                  </button>
+                  <button
+                    class="profileBtn me-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#viewProfileModal"
+                    type="button"
+                    id="editDetailsBtn"
+                  >
+                    Edit Profile
+                  </button>
+                  <button
+                    class="profileBtn me-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#privacySettingsModal"
+                    id="privacySettingsBtn"
+                  >
+                    Privcacy Settings
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit and update Profile -->
+    <div
+      class="modal fade"
+      id="viewProfileModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Update Profile
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="viewModalText">
+            <div class="d-flex justify-content-center align-items-center">
+              <div id="loader3">
+                <div class="loader3"></div>
+              </div>
+            </div>
+            <img src="" width="100%" id="notifyEditViewModal" />
+            <div id="viewProfileModalBody" style="display: none">
+              <div
+                class="userImage mb-2 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img src="" id="editViewProfileImg" alt="Loading..." />
+              </div>
+              <p>
+                Edit any desired field and then save. Note:Please fill every
+                field with correct format.
+              </p>
+              <div class="col-md-12 mt-2">
+                <input type="text" class="settings" id="viewname" />
+              </div>
+              <div class="col-md-12 mt-2">
+                <input type="text" class="settings" id="viewsurname" />
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewmobileNo" />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewemailProvided" />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewuserStatus" />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewaddress" />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewcityName" />
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input type="text" class="settings" id="viewcountryName" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="profileBtn"
+                  data-bs-dismiss="modal"
+                  id="viewProfileModalCloseBtn"
+                >
+                  Close
+                </button>
+                <button type="button" class="profileBtn" id="updateDetailsBtn">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Privacy Settings -->
+    <div
+      class="modal fade"
+      id="privacySettingsModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Privacy Settings
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="userImage mb-4 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src=""
+                id="userPhotoprivacy"
+                class="d-flex justify-content-center align-items-center"
+                alt=""
+              />
+            </div>
+            <label for="">Your old Email:</label>
+            <input
+              type="text"
+              id="oldEmail"
+              class="mb-2"
+              placeholder="Old email"
+              disabled
+            />
+            <input
+              type="email"
+              id="newEmail"
+              class="mb-2"
+              placeholder="Type new email"
+            />
+            <button class="btn mb-2" id="updateEmailBtn">Update Email</button>
+            <input
+              type="password"
+              id="newPassword"
+              class="mb-2"
+              placeholder="Type new password"
+            />
+            <button class="btn" id="updatePasswordBtn">Update Password</button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="profileBtn"
+              data-bs-dismiss="modal"
+              id="privacySettingsModalCloseBtn"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Toastr JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Firebase Js -->
+    <script src="../firebase.js" type="module"></script>
+    <!-- Custom Js -->
+    <script src="../JavaScriptFiles/profile.js" type="module"></script>
+  </body>
+</html>

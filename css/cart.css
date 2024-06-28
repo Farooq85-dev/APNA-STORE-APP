@@ -1,0 +1,129 @@
+@import url(./responsive.css);
+
+.cart-btn {
+  background-color: var(--btnBgColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 20px;
+}
+
+.cart-btn:hover {
+  color: white;
+}
+
+.cart-btn:active {
+  opacity: 0.8;
+}
+
+.card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: var(--radius);
+}
+
+.card-header {
+  background-color: var(--btnBgColor);
+  color: var(--whiteColor);
+}
+
+.mainEdit,
+.mainView {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  background-color: var(--inputBgColor);
+  color: var(--TextColor);
+  border: none;
+  outline: none;
+  padding-top: var(--paddingInput);
+  padding-bottom: var(--paddingInput);
+  border-bottom: 1px solid var(--TextColor);
+  font-weight: normal;
+}
+
+input:focus {
+  border-bottom: var(--borderBottomStyle);
+}
+
+#placeOrderBtn,
+#viewOrderBtn {
+  background-color: var(--btnBgColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: var(--radius);
+  padding: 5px 15px;
+}
+
+/* Loader Css */
+.loader4,
+.loader5 {
+  width: 100px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+}
+
+.loader4::before,
+.loader4::after,
+.loader5::before,
+.loader5::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.loader4::before,
+.loader5::before {
+  border-color: #f03355 #0000 !important;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.loader4::after,
+.loader5::after {
+  margin: 8px;
+}
+
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+#loader4,
+#loader5 {
+  display: none;
+}
+
+.quantityProduct h6 {
+  margin-bottom: 0px !important;
+}
+
+.ordersIdBg {
+  background-color: var(--btnBgColor);
+  color: var(--whiteColor);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.cartImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartImg > img {
+  width: 70%;
+}

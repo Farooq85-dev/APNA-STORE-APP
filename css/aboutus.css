@@ -1,0 +1,17 @@
+.aboutImg {
+    width: 450px;
+    height: 450px;
+    background-color: #e7e7e7;
+    border-radius: 225px;
+}
+
+
+.aboutImg>img {
+    top: 22px;
+    right: 91px;
+}
+
+.aboutUs{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

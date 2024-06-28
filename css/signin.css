@@ -1,0 +1,68 @@
+.fa-search {
+    right: 20px !important;
+    font-size: var(--IconSize);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blackColor);
+}
+
+/* SignIn Css */
+.paddingContaiiner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.signInform {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 30px;
+}
+
+.inputEmail>input,
+.inputPassword>input {
+    width: 100%;
+    background-color: var(--inputBgColor);
+    color: var(--TextColor);
+    border: none;
+    outline: none;
+    padding-top: var(--paddingInput);
+    padding-bottom: var(--paddingInput);
+    border-bottom: 1px solid var(--TextColor);
+    font-weight: normal;
+}
+
+.inputEmail>input:focus,
+.inputPassword>input:focus {
+    border-bottom: var(--borderBottomStyle);
+}
+
+.signInBtnDiv>button,
+.googleBtnDiv>button {
+    background-color: var(--btnBgColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: var(--radius);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.signInImage>img {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.formDescription>p>a {
+    text-decoration: underline !important;
+}
+
+.badge {
+    padding: 10px;
+    color: var(--whiteColor);
+    background-color: var(--redColor);
+    font-weight: normal;
+    cursor: pointer;
+}

@@ -1,0 +1,194 @@
+.navbar {
+  background-color: var(--whiteColor) !important;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.searchContainer {
+  width: 100% !important;
+}
+
+.searchContainer > input {
+  font-family: var(--font);
+  border-radius: 10px;
+  width: 100% !important;
+}
+
+.searchContainer > input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25) !important;
+}
+
+.fa-search {
+  right: 125px;
+  font-size: var(--IconSize);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blackColor);
+}
+
+.fa-cart-shopping,
+.fa-house {
+  font-size: var(--IconSize);
+}
+
+/* User Css */
+.card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.userimage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.userimage img,
+#editViewProfileImg,
+#userPhotoprivacy {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.maincard > h1 {
+  color: var(--redColor);
+}
+
+.profileBtns {
+  display: flex;
+  gap: 10px;
+}
+
+.profileBtns button,
+.profileBtn,
+#placeOrderBtn,
+#privacySettingsBtn,
+#updateDetailsBtn,
+#updatePasswordBtn,
+#updateEmailBtn {
+  background-color: var(--btnBgColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: var(--radius);
+  padding: 5px 15px;
+}
+
+#loader {
+  margin-left: 20px;
+}
+
+#userEmail,
+#userVerified {
+  margin-bottom: 0px !important;
+}
+
+/* Edit Css */
+.mainEdit,
+.mainView {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  background-color: var(--inputBgColor);
+  color: var(--TextColor);
+  border: none;
+  outline: none;
+  padding-top: var(--paddingInput);
+  padding-bottom: var(--paddingInput);
+  border-bottom: 1px solid var(--TextColor);
+  font-weight: normal;
+}
+
+input:focus {
+  border-bottom: var(--borderBottomStyle);
+}
+
+/* Loader Css */
+.loader1,
+.loader2,
+.loader3 {
+  width: 100px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+}
+
+.loader1::before,
+.loader1::after,
+.loader2::before,
+.loader2::after,
+.loader3::before,
+.loader3::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.loader1::before,
+.loader2::before,
+.loader3::before {
+  border-color: #f03355 #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.loader1::after,
+.loader2::after,
+.loader3::after {
+  margin: 8px;
+}
+
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+#loader1,
+#loader2,
+#loader3 {
+  display: none;
+}
+
+/* Progress Css */
+.progress {
+  width: 100%;
+  height: 20px;
+  border: 1px solid var(--redColor);
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.8s ease;
+}
